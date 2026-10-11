@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #faf8f3;
+  font-family: 'Jost', sans-serif;
+  color: #2e442e;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+.nav-link {
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #385538;
+  transition: color 0.3s ease;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: #c9a96e;
+  transition: width 0.3s ease;
+}
+.nav-link:hover { color: #c9a96e; }
+.nav-link:hover::after { width: 100%; }
+
+.nav-link.nav-link-light { color: #e6ede5; }
+.nav-link.nav-link-light:hover { color: #c9a96e; }
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.section-label {
+  letter-spacing: 0.25em;
+  font-size: 0.65rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #c9a96e;
+}
+
+.divider-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, #c9a96e, transparent);
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.9s ease forwards; }
+.delay-1 { animation-delay: 0.15s; opacity: 0; }
+.delay-2 { animation-delay: 0.3s;  opacity: 0; }
+.delay-3 { animation-delay: 0.45s; opacity: 0; }
+.delay-4 { animation-delay: 0.6s;  opacity: 0; }
+
+/* Service card */
+.service-card {
+  border: 1px solid rgba(125,163,122,0.2);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(4px);
+}
+.service-card:hover {
+  border-color: rgba(201,169,110,0.5);
+  box-shadow: 0 8px 32px rgba(56,85,56,0.08);
+  transform: translateY(-4px);
+}
+
+/* CTA button */
+.btn-sage {
+  background: #476b45;
+  color: #faf8f3;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 0.85rem 2.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-sage:hover {
+  background: #385538;
+  transform: translateY(-1px);
+}
+.btn-outline {
+  border: 1px solid #476b45;
+  color: #476b45;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 0.85rem 2.5rem;
+  transition: all 0.3s;
+}
+.btn-outline:hover {
+  background: #476b45;
+  color: #faf8f3;
+}
+
+/* Light-on-dark variants for use over green backgrounds */
+.btn-light {
+  background: #faf8f3;
+  color: #2e442e;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 0.85rem 2.5rem;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-light:hover {
+  background: #e6ede5;
+  transform: translateY(-1px);
+}
+.btn-outline-light {
+  border: 1px solid rgba(250,248,243,0.5);
+  color: #faf8f3;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 0.85rem 2.5rem;
+  transition: all 0.3s;
+}
+.btn-outline-light:hover {
+  background: #faf8f3;
+  color: #2e442e;
+  border-color: #faf8f3;
+}
+
+/* Leaf decoration */
+.leaf-accent {
+  font-size: 1.5rem;
+  color: #a9c3a6;
+  user-select: none;
+}
+
+/* Testimonial */
+.testimonial-card {
+  border-left: 2px solid #c9a96e;
+}
+
+/* Scroll-reveal via intersection observer */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Hero background decorative circle */
+.hero-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(125,163,122,0.18) 0%, transparent 70%);
+}

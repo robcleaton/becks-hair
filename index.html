@@ -3,217 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Becks Hairdresser</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- TODO: add CookieHub consent manager + re-gate the Google tag below on "statistics" consent once compliance work is done -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYPTHXEJRL"></script>
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            sage: {
-              50:  '#f4f7f4',
-              100: '#e6ede5',
-              200: '#cddccb',
-              300: '#a9c3a6',
-              400: '#7da37a',
-              500: '#5c8659',
-              600: '#476b45',
-              700: '#385538',
-              800: '#2e442e',
-              900: '#263827',
-            },
-            cream: '#faf8f3',
-            gold:  '#c9a96e',
-          },
-          fontFamily: {
-            display: ['"Cormorant Garamond"', 'serif'],
-            body:    ['"Jost"', 'sans-serif'],
-          },
-        }
-      }
-    }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RYPTHXEJRL');
   </script>
-  <style>
-    html { scroll-behavior: smooth; }
 
-    body {
-      background-color: #faf8f3;
-      font-family: 'Jost', sans-serif;
-      color: #2e442e;
-    }
+  <title>Rebecca Cleaton Hair | Premium Hair Salon in London</title>
+  <meta name="description" content="Rebecca Cleaton Hair is a premium hair studio in London offering bespoke cuts, colour, highlights, treatments and bridal styling since 2015."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.rebeccacleatonhair.co.uk/"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%23476b45'%3ER%3C/text%3E%3C/svg%3E"/>
 
-    /* Grain overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.4;
-    }
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Rebecca Cleaton Hair | Premium Hair Salon in London"/>
+  <meta property="og:description" content="A sanctuary of calm and creativity. Bespoke cuts, colour and treatments in the heart of London."/>
+  <meta property="og:url" content="https://www.rebeccacleatonhair.co.uk/"/>
+  <meta property="og:image" content="https://www.rebeccacleatonhair.co.uk/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Rebecca Cleaton Hair | Premium Hair Salon in London"/>
+  <meta name="twitter:description" content="A sanctuary of calm and creativity. Bespoke cuts, colour and treatments in the heart of London."/>
+  <meta name="twitter:image" content="https://www.rebeccacleatonhair.co.uk/og-image.jpg"/>
 
-    .nav-link {
-      letter-spacing: 0.18em;
-      font-size: 0.7rem;
-      font-weight: 300;
-      text-transform: uppercase;
-      color: #385538;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0;
-      width: 0; height: 1px;
-      background: #c9a96e;
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover { color: #c9a96e; }
-    .nav-link:hover::after { width: 100%; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-    }
-
-    .section-label {
-      letter-spacing: 0.25em;
-      font-size: 0.65rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      color: #c9a96e;
-    }
-
-    .divider-line {
-      width: 60px;
-      height: 1px;
-      background: linear-gradient(to right, #c9a96e, transparent);
-    }
-
-    /* Fade-in animation */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .fade-up { animation: fadeUp 0.9s ease forwards; }
-    .delay-1 { animation-delay: 0.15s; opacity: 0; }
-    .delay-2 { animation-delay: 0.3s;  opacity: 0; }
-    .delay-3 { animation-delay: 0.45s; opacity: 0; }
-    .delay-4 { animation-delay: 0.6s;  opacity: 0; }
-
-    /* Service card */
-    .service-card {
-      border: 1px solid rgba(125,163,122,0.2);
-      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-      background: rgba(255,255,255,0.5);
-      backdrop-filter: blur(4px);
-    }
-    .service-card:hover {
-      border-color: rgba(201,169,110,0.5);
-      box-shadow: 0 8px 32px rgba(56,85,56,0.08);
-      transform: translateY(-4px);
-    }
-
-    /* CTA button */
-    .btn-sage {
-      background: #476b45;
-      color: #faf8f3;
-      letter-spacing: 0.2em;
-      font-size: 0.7rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      padding: 0.85rem 2.5rem;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .btn-sage:hover {
-      background: #385538;
-      transform: translateY(-1px);
-    }
-    .btn-outline {
-      border: 1px solid #476b45;
-      color: #476b45;
-      letter-spacing: 0.2em;
-      font-size: 0.7rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      padding: 0.85rem 2.5rem;
-      transition: all 0.3s;
-    }
-    .btn-outline:hover {
-      background: #476b45;
-      color: #faf8f3;
-    }
-
-    /* Leaf decoration */
-    .leaf-accent {
-      font-size: 1.5rem;
-      color: #a9c3a6;
-      user-select: none;
-    }
-
-    /* Testimonial */
-    .testimonial-card {
-      border-left: 2px solid #c9a96e;
-    }
-
-    /* Scroll-reveal via intersection observer */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* Hero background decorative circle */
-    .hero-circle {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(125,163,122,0.18) 0%, transparent 70%);
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Rebecca Cleaton Hair",
+    "url": "https://www.rebeccacleatonhair.co.uk/",
+    "image": "https://www.rebeccacleatonhair.co.uk/og-image.jpg",
+    "telephone": "+442079460123",
+    "email": "hello@rebeccacleatonhair.co.uk",
+    "priceRange": "£££",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "14 Blossom Lane",
+      "addressLocality": "London",
+      "postalCode": "W1B 3AE",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "18:00" }
+    ],
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
 
 <!-- ─── NAVIGATION ──────────────────────────────────────────── -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sage-100">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-sage-800 border-b border-sage-700">
   <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
-    <a href="#" class="font-display text-2xl font-light tracking-wide text-sage-700">
-      Becks
-      <span class="text-gold italic"> &amp;</span>
+    <a href="#" class="font-display text-2xl font-light tracking-wide text-cream">
+      Rebecca Cleaton
+      <span class="text-gold italic"> Hair</span>
     </a>
 
     <div class="hidden md:flex items-center gap-10">
-      <a href="#about"    class="nav-link">About</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#gallery"  class="nav-link">Gallery</a>
-      <a href="#contact"  class="nav-link">Contact</a>
+      <a href="#about"    class="nav-link nav-link-light">About</a>
+      <a href="#services" class="nav-link nav-link-light">Services</a>
+      <a href="#gallery"  class="nav-link nav-link-light">Gallery</a>
+      <a href="#contact"  class="nav-link nav-link-light">Contact</a>
     </div>
 
-    <a href="#booking" class="hidden md:block btn-sage">Book Now</a>
+    <a href="#booking" class="hidden md:block btn-light">Book Now</a>
 
     <!-- Mobile menu button -->
-    <button id="menuBtn" class="md:hidden text-sage-700">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+    <button id="menuBtn" class="md:hidden text-cream" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
       </svg>
     </button>
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobileMenu" class="hidden md:hidden bg-cream border-t border-sage-100 px-8 py-6 flex flex-col gap-5">
-    <a href="#about"    class="nav-link">About</a>
-    <a href="#services" class="nav-link">Services</a>
-    <a href="#gallery"  class="nav-link">Gallery</a>
-    <a href="#contact"  class="nav-link">Contact</a>
-    <a href="#booking" class="btn-sage text-center mt-2">Book Now</a>
+  <div id="mobileMenu" class="hidden md:hidden bg-sage-800 border-t border-sage-700 px-8 py-6 flex flex-col gap-5">
+    <a href="#about"    class="nav-link nav-link-light">About</a>
+    <a href="#services" class="nav-link nav-link-light">Services</a>
+    <a href="#gallery"  class="nav-link nav-link-light">Gallery</a>
+    <a href="#contact"  class="nav-link nav-link-light">Contact</a>
+    <a href="#booking" class="btn-light text-center mt-2">Book Now</a>
   </div>
 </nav>
 
+<main>
 
 <!-- ─── HERO ────────────────────────────────────────────────── -->
-<section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+<section class="relative min-h-screen flex items-center overflow-hidden pt-20 bg-sage-800">
 
   <!-- Decorative circles -->
   <div class="hero-circle w-[600px] h-[600px] -top-40 -right-40"></div>
@@ -233,54 +125,46 @@
     <!-- Text -->
     <div>
       <p class="section-label fade-up delay-1">Premium Hair Studio</p>
-      <h1 class="hero-title text-6xl lg:text-8xl text-sage-800 mt-4 fade-up delay-2">
+      <h1 class="hero-title text-6xl lg:text-8xl text-cream mt-4 fade-up delay-2">
         Where Hair<br/>
-        <em class="text-sage-500">Becomes</em><br/>
+        <em class="text-sage-300">Becomes</em><br/>
         Art.
       </h1>
-      <p class="text-sage-600 font-body font-light text-lg mt-8 leading-relaxed max-w-md fade-up delay-3">
+      <p class="text-sage-200 font-body font-light text-lg mt-8 leading-relaxed max-w-md fade-up delay-3">
         A sanctuary of calm and creativity. We craft bespoke looks tailored to your individuality — using only the finest colour and care products.
       </p>
       <div class="flex flex-wrap gap-4 mt-10 fade-up delay-4">
-        <a href="#booking" class="btn-sage">Reserve Your Chair</a>
-        <a href="#services" class="btn-outline">Explore Services</a>
+        <a href="#booking" class="btn-light">Reserve Your Chair</a>
+        <a href="#services" class="btn-outline-light">Explore Services</a>
       </div>
 
       <!-- Stats -->
       <div class="flex gap-10 mt-14 fade-up delay-4">
         <div>
-          <p class="font-display text-4xl font-light text-sage-700">10+</p>
+          <p class="font-display text-4xl font-light text-cream">10+</p>
           <p class="section-label mt-1">Years of craft</p>
         </div>
-        <div class="w-px bg-sage-200"></div>
+        <div class="w-px bg-sage-600"></div>
         <div>
-          <p class="font-display text-4xl font-light text-sage-700">2k+</p>
+          <p class="font-display text-4xl font-light text-cream">2k+</p>
           <p class="section-label mt-1">Happy clients</p>
         </div>
-        <div class="w-px bg-sage-200"></div>
+        <div class="w-px bg-sage-600"></div>
         <div>
-          <p class="font-display text-4xl font-light text-sage-700">5★</p>
+          <p class="font-display text-4xl font-light text-cream">5★</p>
           <p class="section-label mt-1">Rated salon</p>
         </div>
       </div>
     </div>
 
-    <!-- Hero image placeholder / decorative composition -->
+    <!-- Hero image -->
     <div class="relative hidden lg:block">
-      <div class="w-full aspect-[3/4] rounded-[2rem] bg-gradient-to-br from-sage-200 via-sage-100 to-sage-300 overflow-hidden shadow-2xl relative">
-        <!-- SVG decorative hair silhouette -->
-        <svg viewBox="0 0 400 550" class="absolute inset-0 w-full h-full opacity-30" fill="none">
-          <ellipse cx="200" cy="160" rx="110" ry="130" fill="#476b45"/>
-          <path d="M90 160 Q60 300 80 450 Q120 400 140 350" stroke="#385538" stroke-width="18" stroke-linecap="round" fill="none"/>
-          <path d="M310 160 Q340 300 320 450 Q280 400 260 350" stroke="#385538" stroke-width="18" stroke-linecap="round" fill="none"/>
-          <path d="M130 80 Q160 40 200 35 Q240 40 270 80" stroke="#5c8659" stroke-width="12" stroke-linecap="round" fill="none"/>
-          <path d="M150 100 Q170 55 200 50 Q230 55 250 100" stroke="#7da37a" stroke-width="8" stroke-linecap="round" fill="none"/>
-        </svg>
-        <div class="absolute inset-0 flex flex-col items-center justify-center">
-          <span class="font-display text-8xl font-light text-sage-600 opacity-40">B</span>
-        </div>
+      <div class="w-full aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl relative">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=1067&q=80&auto=format&fit=crop"
+             alt="Woman with long wavy balayage hair, hands running through it"
+             class="absolute inset-0 w-full h-full object-cover" width="800" height="1067" fetchpriority="high"/>
         <!-- Gold accent -->
-        <div class="absolute top-6 right-6 w-16 h-16 rounded-full border border-gold/40 flex items-center justify-center">
+        <div class="absolute top-6 right-6 w-16 h-16 rounded-full border border-gold/40 flex items-center justify-center bg-cream/20 backdrop-blur-sm">
           <div class="w-10 h-10 rounded-full bg-gold/20"></div>
         </div>
       </div>
@@ -296,12 +180,6 @@
     </div>
 
   </div>
-
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-    <span class="section-label">Scroll</span>
-    <div class="w-px h-10 bg-sage-400 animate-pulse"></div>
-  </div>
 </section>
 
 
@@ -311,11 +189,13 @@
 
     <!-- Left: image composition -->
     <div class="relative reveal">
-      <div class="w-3/4 aspect-square bg-gradient-to-br from-sage-200 to-sage-300 rounded-3xl"></div>
+      <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&h=800&q=80&auto=format&fit=crop"
+           alt="Salon styling stations with mirrors and chairs"
+           class="w-3/4 aspect-square object-cover rounded-3xl" width="800" height="800" loading="lazy"/>
       <div class="absolute bottom-0 right-0 w-1/2 aspect-square bg-gradient-to-br from-sage-100 to-cream border border-sage-200 rounded-3xl flex items-center justify-center shadow-lg">
         <div class="text-center">
           <span class="leaf-accent">✦</span>
-          <p class="font-display text-3xl font-light text-sage-600 mt-2">Beck</p>
+          <p class="font-display text-3xl font-light text-sage-600 mt-2">Rebecca</p>
           <p class="section-label mt-1">Founder & Stylist</p>
         </div>
       </div>
@@ -331,7 +211,7 @@
         A space to feel<br/><em>beautifully yourself</em>.
       </h2>
       <p class="text-sage-600 font-light leading-relaxed mt-6">
-        Founded by Rebecca in 2015, Becks Hairdresser was born from a simple belief — that every visit to the salon should feel like a retreat. Set in the heart of London, our studio blends expert technique with a deeply personal touch.
+        Founded by Rebecca Cleaton in 2015, Rebecca Cleaton Hair was born from a simple belief — that every visit to the salon should feel like a retreat. Set in the heart of London, our studio blends expert technique with a deeply personal touch.
       </p>
       <p class="text-sage-600 font-light leading-relaxed mt-4">
         We take time to listen, to understand your lifestyle and vision, and to craft results that last. Whether you're seeking a bold transformation or a subtle refresh, you're in the finest hands.
@@ -375,7 +255,7 @@
 
       <!-- Service cards -->
       <div class="service-card rounded-2xl p-8 reveal">
-        <div class="text-3xl mb-4">✂️</div>
+        <div class="text-3xl mb-4" aria-hidden="true">✂️</div>
         <h3 class="font-display text-2xl font-light text-sage-800">Cut &amp; Style</h3>
         <p class="text-sage-600 font-light text-sm mt-3 leading-relaxed">Precision cuts tailored to your face shape and lifestyle. Blowdry and finish included.</p>
         <div class="mt-6 flex items-center justify-between">
@@ -385,7 +265,7 @@
       </div>
 
       <div class="service-card rounded-2xl p-8 reveal">
-        <div class="text-3xl mb-4">🎨</div>
+        <div class="text-3xl mb-4" aria-hidden="true">🎨</div>
         <h3 class="font-display text-2xl font-light text-sage-800">Colour</h3>
         <p class="text-sage-600 font-light text-sm mt-3 leading-relaxed">From balayage to vivids, full colour to glosses — we match your vision with artisan skill.</p>
         <div class="mt-6 flex items-center justify-between">
@@ -395,7 +275,7 @@
       </div>
 
       <div class="service-card rounded-2xl p-8 reveal">
-        <div class="text-3xl mb-4">✨</div>
+        <div class="text-3xl mb-4" aria-hidden="true">✨</div>
         <h3 class="font-display text-2xl font-light text-sage-800">Highlights</h3>
         <p class="text-sage-600 font-light text-sm mt-3 leading-relaxed">Sun-kissed balayage, foilayage, and classic foil highlights for luminous, natural-looking depth.</p>
         <div class="mt-6 flex items-center justify-between">
@@ -405,7 +285,7 @@
       </div>
 
       <div class="service-card rounded-2xl p-8 reveal">
-        <div class="text-3xl mb-4">🌿</div>
+        <div class="text-3xl mb-4" aria-hidden="true">🌿</div>
         <h3 class="font-display text-2xl font-light text-sage-800">Treatments</h3>
         <p class="text-sage-600 font-light text-sm mt-3 leading-relaxed">Olaplex bond repair, Kerastase rituals, and deep conditioning masks for restored, radiant hair.</p>
         <div class="mt-6 flex items-center justify-between">
@@ -415,7 +295,7 @@
       </div>
 
       <div class="service-card rounded-2xl p-8 reveal">
-        <div class="text-3xl mb-4">💍</div>
+        <div class="text-3xl mb-4" aria-hidden="true">💍</div>
         <h3 class="font-display text-2xl font-light text-sage-800">Bridal</h3>
         <p class="text-sage-600 font-light text-sm mt-3 leading-relaxed">Luxurious bridal packages including trials, morning-of styling, and wedding party preparation.</p>
         <div class="mt-6 flex items-center justify-between">
@@ -425,7 +305,7 @@
       </div>
 
       <div class="service-card rounded-2xl p-8 reveal">
-        <div class="text-3xl mb-4">🪄</div>
+        <div class="text-3xl mb-4" aria-hidden="true">🪄</div>
         <h3 class="font-display text-2xl font-light text-sage-800">Blowdry Bar</h3>
         <p class="text-sage-600 font-light text-sm mt-3 leading-relaxed">A quick-luxury experience. Walk in, walk out glowing. Volume, waves, or sleek — your call.</p>
         <div class="mt-6 flex items-center justify-between">
@@ -448,23 +328,26 @@
     </div>
 
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-14 reveal">
-      <!-- Placeholder gallery tiles -->
-      <div class="aspect-[3/4] rounded-2xl bg-gradient-to-br from-sage-200 to-sage-400 flex items-center justify-center">
-        <span class="text-sage-600 font-display text-4xl font-light opacity-40">B</span>
+      <div class="aspect-[3/4] rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&h=667&q=80&auto=format&fit=crop"
+             alt="Studio interior with styling chairs and mirrors" class="w-full h-full object-cover" width="500" height="667" loading="lazy"/>
       </div>
-      <div class="aspect-[3/4] rounded-2xl bg-gradient-to-br from-sage-100 to-sage-300 flex items-center justify-center mt-8">
-        <span class="text-sage-500 font-display text-4xl font-light opacity-40">B</span>
+      <div class="aspect-[3/4] rounded-2xl overflow-hidden mt-8">
+        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=500&h=667&q=80&auto=format&fit=crop"
+             alt="Stylist blow-drying a client's hair, both smiling" class="w-full h-full object-cover" width="500" height="667" loading="lazy"/>
       </div>
-      <div class="aspect-[3/4] rounded-2xl bg-gradient-to-br from-sage-300 to-sage-500 flex items-center justify-center">
-        <span class="text-sage-100 font-display text-4xl font-light opacity-40">B</span>
+      <div class="aspect-[3/4] rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&h=667&q=80&auto=format&fit=crop"
+             alt="Client laughing during a hair wash at the basin" class="w-full h-full object-cover" width="500" height="667" loading="lazy"/>
       </div>
-      <div class="aspect-[3/4] rounded-2xl bg-gradient-to-br from-sage-200 to-sage-400 flex items-center justify-center mt-8">
-        <span class="text-sage-600 font-display text-4xl font-light opacity-40">B</span>
+      <div class="aspect-[3/4] rounded-2xl overflow-hidden mt-8">
+        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&h=667&q=80&auto=format&fit=crop"
+             alt="Close-up of hair being blow-dried and styled with a round brush" class="w-full h-full object-cover" width="500" height="667" loading="lazy"/>
       </div>
     </div>
 
     <p class="text-center text-sage-500 font-light text-sm mt-8 reveal">
-      Visit us on <a href="#" class="text-gold underline underline-offset-4">Instagram @beckshairdresser</a> for our latest work
+      Visit us on <a href="#" class="text-gold underline underline-offset-4">Instagram @rebeccacleatonhair</a> for our latest work
     </p>
   </div>
 </section>
@@ -480,7 +363,7 @@
 
     <div class="grid md:grid-cols-3 gap-8 mt-14">
       <div class="testimonial-card pl-6 reveal">
-        <p class="font-display text-xl font-light text-sage-200 italic leading-relaxed">"Beck transformed my hair completely. I've never felt so confident walking out of a salon."</p>
+        <p class="font-display text-xl font-light text-sage-200 italic leading-relaxed">"Rebecca transformed my hair completely. I've never felt so confident walking out of a salon."</p>
         <p class="section-label mt-6" style="color:#a9c3a6;">— Sophie M., London</p>
       </div>
       <div class="testimonial-card pl-6 reveal">
@@ -525,38 +408,53 @@
         <div class="border border-sage-200 rounded-2xl p-6 bg-white/60">
           <p class="section-label">Contact</p>
           <p class="font-body font-light text-sage-700 mt-2">📞 020 7946 0123</p>
-          <p class="font-body font-light text-sage-700 mt-1">✉️ hello@beckshairdresser.co.uk</p>
+          <p class="font-body font-light text-sage-700 mt-1">✉️ hello@rebeccacleatonhair.co.uk</p>
         </div>
       </div>
 
       <!-- Booking form -->
       <div class="border border-sage-200 rounded-2xl p-8 bg-white/60">
         <p class="font-display text-2xl font-light text-sage-800 mb-6">Send a Message</p>
-        <div class="space-y-4">
-          <input type="text"  placeholder="Your Name"
-            class="w-full bg-sage-50/60 border border-sage-200 rounded-xl px-4 py-3 text-sage-700 placeholder-sage-400 text-sm font-light focus:outline-none focus:border-sage-400 transition-colors"/>
-          <input type="email" placeholder="Email Address"
-            class="w-full bg-sage-50/60 border border-sage-200 rounded-xl px-4 py-3 text-sage-700 placeholder-sage-400 text-sm font-light focus:outline-none focus:border-sage-400 transition-colors"/>
-          <select class="w-full bg-sage-50/60 border border-sage-200 rounded-xl px-4 py-3 text-sage-500 text-sm font-light focus:outline-none focus:border-sage-400 transition-colors appearance-none">
-            <option value="" disabled selected>Select a Service</option>
-            <option>Cut &amp; Style</option>
-            <option>Colour</option>
-            <option>Highlights</option>
-            <option>Treatments</option>
-            <option>Bridal</option>
-            <option>Blowdry Bar</option>
-          </select>
-          <textarea rows="3" placeholder="Any notes for us?"
-            class="w-full bg-sage-50/60 border border-sage-200 rounded-xl px-4 py-3 text-sage-700 placeholder-sage-400 text-sm font-light focus:outline-none focus:border-sage-400 transition-colors resize-none"></textarea>
-          <button onclick="alert('Thank you! We\'ll be in touch soon. 🌿')" class="btn-sage w-full text-center rounded-xl">
+        <form id="bookingForm" class="space-y-4" novalidate>
+          <div>
+            <label for="name" class="sr-only">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="Your Name" required
+              class="w-full bg-sage-50/60 border border-sage-200 rounded-xl px-4 py-3 text-sage-700 placeholder-sage-400 text-sm font-light focus:outline-none focus:border-sage-400 transition-colors"/>
+          </div>
+          <div>
+            <label for="email" class="sr-only">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="Email Address" required
+              class="w-full bg-sage-50/60 border border-sage-200 rounded-xl px-4 py-3 text-sage-700 placeholder-sage-400 text-sm font-light focus:outline-none focus:border-sage-400 transition-colors"/>
+          </div>
+          <div>
+            <label for="service" class="sr-only">Select a Service</label>
+            <select id="service" name="service" required
+              class="w-full bg-sage-50/60 border border-sage-200 rounded-xl px-4 py-3 text-sage-500 text-sm font-light focus:outline-none focus:border-sage-400 transition-colors appearance-none">
+              <option value="" disabled selected>Select a Service</option>
+              <option>Cut &amp; Style</option>
+              <option>Colour</option>
+              <option>Highlights</option>
+              <option>Treatments</option>
+              <option>Bridal</option>
+              <option>Blowdry Bar</option>
+            </select>
+          </div>
+          <div>
+            <label for="notes" class="sr-only">Any notes for us?</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Any notes for us?"
+              class="w-full bg-sage-50/60 border border-sage-200 rounded-xl px-4 py-3 text-sage-700 placeholder-sage-400 text-sm font-light focus:outline-none focus:border-sage-400 transition-colors resize-none"></textarea>
+          </div>
+          <button type="submit" class="btn-sage w-full text-center rounded-xl">
             Send Enquiry
           </button>
-        </div>
+          <p id="formStatus" role="status" class="text-sage-600 text-sm font-light mt-2" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
+</main>
 
 <!-- ─── FOOTER ───────────────────────────────────────────────── -->
 <footer class="bg-sage-900 py-14 px-8">
@@ -564,7 +462,7 @@
     <div class="flex flex-col md:flex-row items-center justify-between gap-8">
       <div class="text-center md:text-left">
         <a href="#" class="font-display text-3xl font-light text-sage-100">
-          Becks <em class="text-gold">&</em>
+          Rebecca Cleaton <em class="text-gold">Hair</em>
         </a>
         <p class="text-sage-400 font-light text-sm mt-2">Premium Hair Studio · London</p>
       </div>
@@ -589,30 +487,13 @@
     </div>
 
     <div class="border-t border-sage-700 mt-10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-sage-500 font-light text-xs tracking-widest uppercase">© 2025 Becks Hairdresser. All rights reserved.</p>
+      <p class="text-sage-500 font-light text-xs tracking-widest uppercase">© 2025 Rebecca Cleaton Hair. All rights reserved.</p>
       <p class="text-sage-600 font-light text-xs">Crafted with care in London</p>
     </div>
   </div>
 </footer>
 
 
-<script>
-  // Mobile menu toggle
-  document.getElementById('menuBtn').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('hidden');
-  });
-
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+<script defer src="js/main.js"></script>
 </body>
 </html>
